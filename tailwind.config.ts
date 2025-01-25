@@ -11,8 +11,13 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primaryAccent: "var(--primary-accent)", // Coral color
+        secondaryAccent: "var(--secondary-accent)", // Purple color
+        navFooterBg: "var(--nav-footer-bg)", // Background for header/footer
+        highlight: "var(--highlight)", // Blue color for links
       },
     },
   },
+  darkMode: "class", // Enable dark mode based on user preference
   plugins: [],
 } satisfies Config;

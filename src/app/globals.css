@@ -2,20 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Root theme variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f5f5; /* Light mode background */
+  --foreground: #2c2c2c; /* Light mode text color */
+  --primary-accent: #c19a6b; /* Coral accent */
+  --secondary-accent: #8c7b75; /* Purple accent */
+  --nav-footer-bg: #4a4a4a; /* Dark gray for nav/footer */
+  --highlight: #a67d5d; /* Blue highlight for links */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1b1b1b; /* Dark mode background */
+    --foreground: #e0e0e0; /* Dark mode text color */
+    --primary-accent: #c19a6b; /* Darker coral for dark mode */
+    --secondary-accent: #8c7b75; /* Darker purple for dark mode */
+    --nav-footer-bg: #2c2c2c; /* Darker gray for nav/footer */
+    --highlight: #a67d5d; /* Slightly lighter blue for dark mode */
   }
 }
 
+/* Body styling */
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Georgia', serif; /* Serif font for a classy feel */
+  line-height: 1.8;
 }
+
+/* Header styles */
+header {
+  background-color: var(--nav-footer-bg);
+  color: var(--foreground);
+  padding: 20px;
+  text-align: center;
+}
+
+/* Footer styles */
+footer {
+  background-color: var(--nav-footer-bg);
+  color: var(--foreground);
+  padding: 20px;
+  text-align: center;
+}
+
+/* Links and buttons */
+a {
+  color: var(--highlight);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-accent); /* Antique gold on hover */
+}
+
+button {
+  background-color: var(--primary-accent);
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif; /* Clean sans-serif for buttons */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for elegance */
+}
+
+button:hover {
+  background-color: var(--secondary-accent); /* Muted mauve on hover */
+}
+
+/* Typography styles */
+h1, h2, h3 {
+  color: var(--foreground);
+  font-family: 'Playfair Display', serif; /* Elegant serif for headings */
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--foreground);
+}
+
+/* Additional Rich Details */
+blockquote {
+  font-style: italic;
+  padding: 10px 20px;
+  border-left: 4px solid var(--primary-accent);
+  background-color: var(--background);
+}
+
