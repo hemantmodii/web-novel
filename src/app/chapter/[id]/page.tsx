@@ -1,5 +1,11 @@
 import prisma from '@/lib/prisma';
 
+interface Chapter {
+  id: number;
+  name: string;
+  content: string;
+}
+
 export default async function ChapterPage({ params }: { params: { id: string } }) {
   // Fetch the chapter data from the database
   const chapter = await prisma.chapters.findUnique({
