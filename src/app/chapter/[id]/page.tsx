@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import { notFound } from 'next/navigation';  // For 404 handling
 
 // Type for the params object
 interface ChapterPageProps {
@@ -9,13 +10,28 @@ interface ChapterPageProps {
 
 const prisma = new PrismaClient();
 
-export default async function ChapterPage({ params }: ChapterPageProps) {
-  // Fetch the chapter data from the database
+// Fetching chapter data on the server side using getServerSideProps
+export async function generateMetadata({ params }: ChapterPageProps) {
   const chapter = await prisma.chapters.findUnique({
-    where: { id: Number(params.id) }, // Cast the ID to a number for querying
+    where: { id: Number(params.id) },
   });
 
-  // If the chapter is not found, return an error or 404
+  if (!chapter) {
+    notFound(); // Automatically show a 404 page if no chapter is found
+  }
+
+  return {
+    title: chapter.name,
+    description: chapter.content,
+  };
+}
+
+export default async function ChapterPage({ params }: ChapterPageProps) {
+  const chapter = await prisma.chapters.findUnique({
+    where: { id: Number(params.id) }, // Cast the ID to a number
+  });
+
+  // If chapter doesn't exist, return a 404
   if (!chapter) {
     return (
       <div className="min-h-screen flex items-center justify-center text-center">
