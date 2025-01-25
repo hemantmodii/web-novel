@@ -1,22 +1,27 @@
-import prisma from '@/lib/prisma';
+import { PrismaClient } from '@prisma/client';
 
-interface Chapter {
-  id: number;
-  name: string;
-  content: string;
+// Type for the params object
+interface ChapterPageProps {
+  params: {
+    id: string; // The dynamic parameter in your URL (e.g., /chapters/1)
+  };
 }
 
-export default async function ChapterPage({ params }: { params: { id: string } }) {
+const prisma = new PrismaClient();
+
+export default async function ChapterPage({ params }: ChapterPageProps) {
   // Fetch the chapter data from the database
   const chapter = await prisma.chapters.findUnique({
-    where: { id: Number(params.id) },
+    where: { id: Number(params.id) }, // Cast the ID to a number for querying
   });
 
-  // If the chapter is not found, return an error
+  // If the chapter is not found, return an error or 404
   if (!chapter) {
     return (
       <div className="min-h-screen flex items-center justify-center text-center">
-        <h1 className="text-3xl font-bold text-primaryAccent">Chapter {params.id} is Coming soon...</h1>
+        <h1 className="text-3xl font-bold text-primaryAccent">
+          Chapter {params.id} is Coming soon...
+        </h1>
       </div>
     );
   }
