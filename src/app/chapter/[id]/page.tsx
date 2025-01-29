@@ -1,17 +1,10 @@
 import prisma from '@/lib/prisma';
-import { PropsWithChildren } from 'react';
-export default async function ChapterPage({
-  params
-}: PropsWithChildren<{
-  params: { id: string }
-}>) {
-  // ... rest of your component
-  // Fetch the chapter data from the database
+import { PageProps } from '@/utils/types';
+export default async function ChapterPage({ params }: PageProps) {
   const chapter = await prisma.chapters.findUnique({
     where: { id: Number(params.id) },
   });
 
-  // If the chapter is not found, return an error
   if (!chapter) {
     return (
       <div className="min-h-screen flex items-center justify-center text-center">
