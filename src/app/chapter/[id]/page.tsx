@@ -13,6 +13,10 @@ export default async function ChapterPage({ params }: PageProps) {
     );
   }
 
+  // type VerifyPageProps = {} extends PageProps ? true: false;
+
+  // const typeDebug: PageProps = null;
+
   return (
     <div className="min-h-screen px-6 py-10 bg-background text-foreground">
       <h1 className="text-4xl font-bold mb-5 text-primary-accent">{chapter.name}</h1>
