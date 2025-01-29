@@ -4,8 +4,6 @@ const prisma = new PrismaClient();
 
 async function main() {
 
-   await prisma.$executeRaw`ALTER SEQUENCE "Chapters_id_seq" RESTART WITH 1;`;
-
    await prisma.chapters.create({
       data: {
         name: `The Black House`,
