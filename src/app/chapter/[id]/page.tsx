@@ -1,5 +1,9 @@
 import prisma from '@/lib/prisma';
-export default async function ChapterPage({ params }: { params: { id: string; }; }) {
+
+type tParams = Promise<{ params: { id: string } }>;
+
+export default async function ChapterPage(props : { params : tParams }) {
+  const { params } = await props.params;
   const chapter = await prisma.chapters.findUnique({
     where: { id: Number(params.id) },
   });
