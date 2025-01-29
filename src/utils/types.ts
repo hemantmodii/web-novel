@@ -1,1 +1,1 @@
-export type PageProps = { params: { id: string } };
+export type PageProps = { params: { id: string; }; };
