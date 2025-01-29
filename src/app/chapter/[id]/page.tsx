@@ -1,6 +1,5 @@
 import prisma from '@/lib/prisma';
-import { PageProps } from '@/utils/types';
-export default async function ChapterPage({ params }: PageProps) {
+export default async function ChapterPage({ params }: { params: { id: string; }; }) {
   const chapter = await prisma.chapters.findUnique({
     where: { id: Number(params.id) },
   });
@@ -12,11 +11,6 @@ export default async function ChapterPage({ params }: PageProps) {
       </div>
     );
   }
-
-  // type VerifyPageProps = {} extends PageProps ? true: false;
-
-  // const typeDebug: PageProps = null;
-
   return (
     <div className="min-h-screen px-6 py-10 bg-background text-foreground">
       <h1 className="text-4xl font-bold mb-5 text-primary-accent">{chapter.name}</h1>

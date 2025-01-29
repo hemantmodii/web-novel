@@ -15,16 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <title>Hemant&apos;s Web Novel</title>
-        <meta name="description" content={`A tale of mystery and adventure, updated daily`} />
-      </head>
-      <body className="max-w-6xl mx-auto bg-[#151515]">
-        <div>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </div>
+      <body suppressHydrationWarning = {true}>
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
   );
