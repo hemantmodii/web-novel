@@ -9,6 +9,9 @@ export default function Footer() {
          <a href="https://www.linkedin.com/in/hemant-modi-1573141b8/" target="_blank" rel="noopener noreferrer" className="mx-2">
            LinkedIn
          </a>
+         <a href="https://github.com/hemantmodii/" target="_blank" rel="noopener noreferrer" className="mx-2">
+           Github
+         </a>
        </div>
      </footer>
    );

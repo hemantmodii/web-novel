@@ -29,9 +29,9 @@ export default function AddChapterForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4 text-black w-full">
       <div>
-        <label className="block" htmlFor="name">
+        <label className="block text-foreground" htmlFor="name">
           Chapter Title:
         </label>
         <input
@@ -44,7 +44,7 @@ export default function AddChapterForm() {
         />
       </div>
       <div>
-        <label className="block" htmlFor="content">
+        <label className="block text-foreground" htmlFor="content">
           Chapter Content:
         </label>
         <textarea
