@@ -7,7 +7,7 @@ import {FiEye, FiEyeOff} from "react-icons/fi";
 export default function AddChapterPage() {
   const [password, setPassword] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const correctPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD; // Replace this with your password
+  const correctPassword = process.env.ADMIN_PASSWORD; // Replace this with your password
   const [viewPass, setViewPass]= useState("password");
 
   const handlePasswordSubmit = (e) => {
