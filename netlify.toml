@@ -1,6 +1,6 @@
 [build]
   command = "npm install && prisma generate && npm run build"
-  environment = { NODE_ENV = "production" }
+  environment = { NODE_ENV = "production", GO_VERSION = "1.19" }
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
@@ -8,11 +8,3 @@
 [build.cache]
   # Ignore Prisma Client cache to prevent using outdated versions
   ignore = ["node_modules/@prisma/client"]
-
-# Ensure Go 1.19 is installed
-[build.environment]
-  GO_VERSION = "1.19"
-
-[[plugins]]
-  package = "@netlify/plugin-install-go"
-  inputs = { go_version = "1.19" }
