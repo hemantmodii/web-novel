@@ -1,6 +1,13 @@
 import prisma from '@/lib/prisma';
 
-export default async function ChapterPage({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: {
+    id: string;
+  };
+  searchParams?: Record<string, string | string[] | undefined>;
+}
+
+export default async function ChapterPage({ params }: PageProps) {
   const chapter = await prisma.chapters.findUnique({
     where: { id: parseInt(params.id, 10) || 0 },
   });
