@@ -6,8 +6,8 @@
 :root {
   --foreground: #f5f5f5; /* Light mode background */
   --background: #2c2c2c; /* Light mode text color */
-  --primary-accent: #c19a6b; /* Coral accent */
-  --secondary-accent: #8c7b75; /* Purple accent */
+  --primary: #c19a6b; /* Coral accent */
+  --secondary: #8c7b75; /* Purple accent */
   --nav-footer-bg: #4a4a4a; /* Dark gray for nav/footer */
   --highlight: #a67d5d; /* Blue highlight for links */
 }
@@ -43,11 +43,11 @@ a {
 }
 
 a:hover {
-  color: var(--primary-accent); /* Antique gold on hover */
+  color: var(--primary); /* Antique gold on hover */
 }
 
 button {
-  background-color: var(--primary-accent);
+  background-color: var(--primary);
   color: white;
   padding: 12px 24px;
   font-size: 16px;
@@ -59,7 +59,7 @@ button {
 }
 
 button:hover {
-  background-color: var(--secondary-accent); /* Muted mauve on hover */
+  background-color: var(--secondary); /* Muted mauve on hover */
 }
 
 /* Typography styles */
@@ -78,7 +78,7 @@ p {
 blockquote {
   font-style: italic;
   padding: 10px 20px;
-  border-left: 4px solid var(--primary-accent);
+  border-left: 4px solid var(--primary);
   background-color: var(--background);
 }
 

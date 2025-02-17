@@ -17,7 +17,7 @@ export default async function ChapterPage({ params }) {
 
   return (
     <div className="min-h-screen px-6 py-10 bg-background text-foreground">
-      <h1 className="text-4xl font-bold mb-5 text-primary-accent text-center">
+      <h1 className="text-4xl font-bold mb-5 text-[#c19a6b] text-center">
         {chapter.name}
       </h1>
       <p className="text-lg leading-relaxed whitespace-pre-line">

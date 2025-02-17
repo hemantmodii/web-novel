@@ -35,7 +35,7 @@ export default function ChaptersPage() {
       <ul className="space-y-4 lg:ml-20 md:ml-8 sm:ml-4">
         {chapters.map((chapter, index) => (
           <li key={chapter.id}>
-            <Link href={`/chapter/${chapter.id}`} className="text-secondaryAccent hover:text-primaryAccent">
+            <Link href={`/chapter/${chapter.id}`} className="text-[#8c7b75] hover:text-[#c19a6b]">
               Chapter {index+1}: {chapter.name}
             </Link>
           </li>

@@ -56,13 +56,13 @@ export default function LandingPage() {
         <ul className="grid gap-6 md:grid-cols-2">
         {latestChapters.map((chapter) => (
           <li key={chapter.id}>
-            <div className="p-4 hover:shadow-sm hover:bg-primaryAccent transition-all duration-300 bg-background rounded-lg">
+            <div className="p-4 hover:shadow-sm hover:bg-[#c19a6b] transition-all duration-300 bg-background rounded-lg">
             <h3 className="text-lg font-bold">Chapter {chapter.id}: {chapter.name}</h3>
             <p className="mt-2 text-sm text-foreground">
             {chapter.content.split(' ').slice(0, 24).join(' ')}...
             </p>
             <Link href={`/chapter/${chapter.id}`}>
-              <button className="mt-4 px-4 py-2 rounded-lg hover:text-white hover:bg-black text-primaryAccent bg-black">
+              <button className="mt-4 px-4 py-2 rounded-lg hover:text-white hover:bg-black text-[#c19a6b] bg-black">
                 Read More
               </button>
             </Link>
