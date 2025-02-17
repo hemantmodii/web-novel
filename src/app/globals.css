@@ -56,6 +56,7 @@ button {
   border-radius: 6px;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for elegance */
+  transition: all 300ms;
 }
 
 button:hover {
@@ -81,4 +82,32 @@ blockquote {
   border-left: 4px solid var(--primary);
   background-color: var(--background);
 }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background); /* Background of the scrollbar track */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c19a6b; /* Color of the scrollbar thumb */
+  border-radius: 50px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a37850; /* Darker shade when hovered */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c19a6b var(--background);
+}
+
 
