@@ -11,7 +11,7 @@ export default function AddChapterPage() {
   const [viewPass, setViewPass]= useState("password");
 
   
-  console.log(correctPassword);
+  // console.log(correctPassword);
 
   const handlePasswordSubmit = (e) => {
     e.preventDefault();
