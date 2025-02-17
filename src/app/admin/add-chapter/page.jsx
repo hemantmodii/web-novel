@@ -10,7 +10,10 @@ export default function AddChapterPage() {
   const correctPassword = process.env.ADMIN_PASSWORD; // Replace this with your password
   const [viewPass, setViewPass]= useState("password");
 
+  
+
   const handlePasswordSubmit = (e) => {
+    console.log("hello");
     e.preventDefault();
 
     if (password === correctPassword) {
