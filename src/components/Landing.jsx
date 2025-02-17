@@ -4,14 +4,9 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Loading from './Loading';
 
-interface Chapter {
-  id: number;
-  name: string;
-  content: string;
-}
 
 export default function LandingPage() {
-  const [latestChapters, setLatestChapters] = useState<Chapter[]>([]);
+  const [latestChapters, setLatestChapters] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

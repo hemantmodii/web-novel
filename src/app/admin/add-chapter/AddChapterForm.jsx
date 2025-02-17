@@ -6,7 +6,7 @@ export default function AddChapterForm() {
   const [name, setName] = useState('');
   const [content, setContent] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const response = await fetch('/api/chapters', {

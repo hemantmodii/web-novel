@@ -10,7 +10,7 @@ export default function AddChapterPage() {
   const correctPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD; // Replace this with your password
   const [viewPass, setViewPass]= useState("password");
 
-  const handlePasswordSubmit = (e: React.FormEvent) => {
+  const handlePasswordSubmit = (e) => {
     e.preventDefault();
 
     if (password === correctPassword) {
