@@ -1,5 +1,5 @@
 [build]
-  command = "npm install && prisma generate && npm run build"
+  command = "npm install && npx prisma generate && npm run build"
   environment = { NODE_ENV = "production", GO_VERSION = "1.19" }
 
 [[plugins]]
