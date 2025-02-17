@@ -38,12 +38,12 @@ footer {
 
 /* Links and buttons */
 a {
-  color: var(--highlight);
+  color: var(--primary);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--primary); /* Antique gold on hover */
+  color: var(--highlight); /* Antique gold on hover */
 }
 
 button {
