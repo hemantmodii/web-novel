@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  environment = { NODE_ENV = "production" }
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.cache]
+  # Ignore Prisma Client cache to prevent using outdated versions
+  ignore = ["node_modules/@prisma/client"]
