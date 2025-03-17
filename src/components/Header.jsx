@@ -17,7 +17,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="bg-[#c19a6b] text-[#f5f5f5] py-0 px-6 flex justify-between items-center lg:px-[11%]">
+    <header className="bg-[#c19a6b] text-[#f5f5f5] py-0 px-6 flex justify-between items-center lg:px-[11%] selection:bg-[#c19a6b] selection:text-black">
       <h1 className="text-2xl font-bold">
         <Link href="/" className="text-[#f5f5f5] hover:text-white">
           <Image

@@ -24,7 +24,7 @@ export default async function ChapterPage({ params }) {
 
   if (!chapter) {
     return (
-      <div className="min-h-screen flex items-center justify-center text-center">
+      <div className="min-h-screen flex items-center justify-center text-center selection:bg-[#c19a6b] selection:text-black">
         <h1 className="text-3xl font-bold text-foreground">
           Chapter {await params.id} is Coming Soon...
         </h1>
@@ -33,8 +33,8 @@ export default async function ChapterPage({ params }) {
   }
 
   return (
-    <div className="min-h-screen px-6 py-10 bg-background text-foreground max-w-5xl mx-auto text-justify">
-      <h1 className="text-4xl font-bold mb-10 text-[#c19a6b] text-center">
+    <div className="min-h-screen px-6 py-10 bg-background text-foreground max-w-5xl mx-auto text-justify selection:bg-[#c19a6b] selection:text-black">
+      <h1 className="text-4xl font-bold mb-10 text-[#c19a6b] text-center selection:bg-[#c19a6b] selection:text-black">
         {chapter.name}
       </h1>
       <p className="text-lg leading-relaxed whitespace-pre-line">

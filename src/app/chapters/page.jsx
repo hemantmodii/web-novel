@@ -30,7 +30,7 @@ export default function ChaptersPage() {
   }
 
   return (
-    <div className="min-h-screen px-6 py-10">
+    <div className="min-h-screen px-6 py-10 selection:bg-[#c19a6b] selection:text-black">
       <h1 className="text-4xl font-bold mb-6 text-center">Chapters</h1>
       <ul className="space-y-4 lg:ml-20 md:ml-8 sm:ml-4">
         {chapters.map((chapter, index) => (
