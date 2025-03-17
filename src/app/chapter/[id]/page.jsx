@@ -1,4 +1,5 @@
 import prisma from '@/lib/prisma';
+import Link from 'next/link';
 
 export async function generateMetadata({ params }) {
   const chapterId = parseInt(params.id, 10);
@@ -40,6 +41,13 @@ export default async function ChapterPage({ params }) {
       <p className="text-lg leading-relaxed whitespace-pre-line">
         {chapter.content}
       </p>
+      <div className={`flex ${parseInt(params.id, 10) > 1 ? "justify-between" : "justify-end"} px-4 py-2 bg-[#c19a6b]`}>
+      {parseInt(params.id, 10) > 1 && (
+        <Link href={`/chapter/${parseInt(params.id, 10) - 1}`} className="text-foreground hover:text-black transition-all duration-300 ease-in-out">Previous Chapter</Link>
+      )}
+        <Link href={`/chapter/${parseInt(params.id, 10) + 1}`} className="text-foreground hover:text-black transition-all duration-300 ease-in-out">Next Chapter</Link>
+
+      </div>
     </div>
   );
 }
