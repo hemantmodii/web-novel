@@ -3,18 +3,19 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
+import { useRouter } from "next/router";
+
 
 export default function LandingPage() {
   const [latestChapters, setLatestChapters] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isNavigating, setIsNavigating] = useState(false);
 
   useEffect(() => {
     const fetchLatestChapters = async () => {
       try {
         const response = await fetch("/api/chapters");
         const data = await response.json();
-        setLatestChapters(data);
-
         const latest = data.slice(-2).reverse();
         setLatestChapters(latest);
       } catch (error) {
@@ -26,6 +27,11 @@ export default function LandingPage() {
 
     fetchLatestChapters();
   }, []);
+
+  const handleNavigation = (href) => {
+    setIsNavigating(true);
+    window.location.href = href;
+  };
 
   function getAgo(dateString) {
     const date = new Date(dateString);
@@ -48,6 +54,9 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen">
+      {loading && <Loading />}
+
+      {isNavigating && (<Loading />)}
       {/* Hero Section */}
       <section className="py-20 text-center bg-black text-foreground">
         <h1 className="text-4xl font-bold">
@@ -57,9 +66,12 @@ export default function LandingPage() {
           A tale of mystery and adventure, updated weekly. Dive into a new
           world!
         </p>
-        <Link href="/chapter/1">
-          <button className="mt-6 px-6 py-2 rounded-lg">Start Reading</button>
-        </Link>
+        <button
+          onClick={() => handleNavigation("/chapter/1")} // Use handleNavigation
+          className="mt-6 px-6 py-2 rounded-lg"
+        >
+          Start Reading
+        </button>
       </section>
       <hr />
 
@@ -80,11 +92,12 @@ export default function LandingPage() {
                   {chapter.content.split(" ").slice(0, 24).join(" ")}...
                 </p>
                 <div className="flex justify-between items-end">
-                <Link href={`/chapter/${chapter.id}`}>
-                  <button className="mt-4 px-4 py-2 rounded-lg hover:text-white hover:bg-black text-[#c19a6b] bg-black">
+                <button
+                    onClick={() => handleNavigation(`/chapter/${chapter.id}`)} // Use handleNavigation
+                    className="mt-4 px-4 py-2 rounded-lg hover:text-white hover:bg-black text-[#c19a6b] bg-black"
+                  >
                     Read More
                   </button>
-                </Link>
                 <span className="text-[#c19a6b] group-hover:text-[#f5f5f5] transition-colors duration-300">{getAgo(chapter.createdAt)}</span>
                 </div>
               </div>
